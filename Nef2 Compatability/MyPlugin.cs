@@ -65,7 +65,7 @@ namespace Nef2_Compatibility
             // This is called when the plugin is loaded
             // Suscribe to delegates here
             myHost.OnGetData += new GetData(on_GetData);
-            myHost.NotifyUser(myName + " v" + myVersion + " by " + myAuthor + "<" + myEmail + "> loaded. Please report bugs to https://github.com/xnite/");
+            myHost.NotifyUser(myName + " v" + myVersion + " by " + myAuthor + "<" + myEmail + "> loaded. Please report bugs & feature requests to https://github.com/xnite/AdiIRC-Nef2-Compatibility/issues");
         }
 
         public void on_GetData(IServer Server, string Data, out EatData Return)
