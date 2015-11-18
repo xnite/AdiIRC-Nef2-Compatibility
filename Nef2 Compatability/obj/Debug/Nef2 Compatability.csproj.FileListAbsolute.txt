@@ -1,0 +1,8 @@
+e:\xnite\documents\visual studio 2015\Projects\Nef2 Compatability\Nef2 Compatability\bin\Debug\AdiIRCAPI.dll
+e:\xnite\documents\visual studio 2015\Projects\Nef2 Compatability\Nef2 Compatability\obj\Debug\Nef2 Compatability.csprojResolveAssemblyReference.cache
+e:\xnite\documents\visual studio 2015\Projects\Nef2 Compatability\Nef2 Compatability\bin\Debug\Nef2 Compatibility.dll
+e:\xnite\documents\visual studio 2015\Projects\Nef2 Compatability\Nef2 Compatability\bin\Debug\Nef2 Compatibility.pdb
+e:\xnite\documents\visual studio 2015\Projects\Nef2 Compatability\Nef2 Compatability\obj\Debug\Nef2_Compatability.operLogin.resources
+e:\xnite\documents\visual studio 2015\Projects\Nef2 Compatability\Nef2 Compatability\obj\Debug\Nef2 Compatability.csproj.GenerateResource.Cache
+e:\xnite\documents\visual studio 2015\Projects\Nef2 Compatability\Nef2 Compatability\obj\Debug\Nef2 Compatibility.dll
+e:\xnite\documents\visual studio 2015\Projects\Nef2 Compatability\Nef2 Compatability\obj\Debug\Nef2 Compatibility.pdb
