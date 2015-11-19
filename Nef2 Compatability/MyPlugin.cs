@@ -13,7 +13,7 @@ namespace Nef2_Compatibility
         private string myName = "Nef2 Compatibility";
         private string myDescription = "Makes AdiIRC more compatible with Nefarious 2 servers.";
         private string myAuthor = "Robert Whitney";
-        private string myVersion = "1.0.0";
+        private string myVersion = "1.0.1-dev";
         private string myEmail = "xnite@AltSociety.co"; // optional
 
         IPlugin nef2compat = null;
