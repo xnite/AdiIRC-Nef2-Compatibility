@@ -89,10 +89,10 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(13, 60);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(242, 26);
+            this.label3.Size = new System.Drawing.Size(256, 26);
             this.label3.TabIndex = 5;
-            this.label3.Text = "If you would like to use the normal `/oper` instead,\r\nplease use `/quote oper ..." +
-    "`";
+            this.label3.Text = "If you would like to use normal `/oper ...`\r\njust provide the command with the co" +
+    "rrect arguments";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // operLogin
@@ -108,7 +108,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "operLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IRC Operator Login";
             this.Load += new System.EventHandler(this.operLogin_Load);
             this.ResumeLayout(false);

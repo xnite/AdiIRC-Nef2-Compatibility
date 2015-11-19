@@ -13,10 +13,9 @@ namespace Nef2_Compatibility
         private string myName = "Nef2 Compatibility";
         private string myDescription = "Makes AdiIRC more compatible with Nefarious 2 servers.";
         private string myAuthor = "Robert Whitney";
-        private string myVersion = "1.0.1-dev";
+        private string myVersion = "1.0.1";
         private string myEmail = "xnite@AltSociety.co"; // optional
 
-        IPlugin nef2compat = null;
         IPluginHost myHost = null;
         ITools myTools = null;
 
@@ -76,7 +75,7 @@ namespace Nef2_Compatibility
         public void on_GetData(IServer Server, string Data, out EatData Return)
         {
             /* Process data from CHECK command */
-            Match checkString = Regex.Match(Data, @"^:(.*?) (290|291|286) (.*?) :(.*)$", RegexOptions.IgnoreCase);
+            Match checkString = Regex.Match(Data, @"^:(.*?) (286|287|290|291|408|461|481) (.*?) :(.*)$", RegexOptions.IgnoreCase);
             if (checkString.Success)
             {
                 myHost.NotifyUser(checkString.Groups[4].Value);
@@ -88,7 +87,7 @@ namespace Nef2_Compatibility
             Match operString = Regex.Match(Data, @"^:(.*?) (381|464|491|532) (.*?) :(.*)$", RegexOptions.IgnoreCase);
             if (operString.Success)
             {
-                MessageBox.Show(operString.Groups[1] + " says: " + operString.Groups[4]);
+                myHost.SendCommand(Server, "/.TIMER", "1 0 NOOP $tip(nef2compat, " + operString.Groups[1] + ", " + operString.Groups[4] + ")");
                 Return = EatData.EatAll;
                 return;
             }
@@ -98,7 +97,7 @@ namespace Nef2_Compatibility
             if (operNotEnoughParams.Success)
             { 
                 this.serverToOperOn = Server;
-                operLogin loginWindow = new operLogin();
+                loginWindow = new operLogin();
                 loginWindow.Show();
                 loginWindow.VisibleChanged += new EventHandler(run_oper_command);
                 Return = EatData.EatAll;
@@ -111,14 +110,14 @@ namespace Nef2_Compatibility
 
         public void run_oper_command(object sender, EventArgs args)
         {
-            loginWindow.Close();
             if (loginWindow.Username.Text.Length >= 1 && loginWindow.Password.Text.Length >= 1)
             {
                 myHost.SendCommand(this.serverToOperOn, "OPER", loginWindow.Username.Text + " " + loginWindow.Password.Text);
             } else
             {
-                MessageBox.Show("Oper attempt failed because username or password was empty!");
+                myHost.SendCommand(this.serverToOperOn, "/.TIMER", "1 0 NOOP $tip(nef2compat, " + myName + ", Oper attempt failed because username or password is empty.)");
             }
+            loginWindow.Close();
         }
 
         public void Dispose()
