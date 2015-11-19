@@ -81,6 +81,7 @@ namespace Nef2_Compatibility
             {
                 myHost.NotifyUser(checkString.Groups[4].Value);
                 Return = EatData.EatAll;
+                return;
             }
 
             /* OPER command returns */
@@ -89,6 +90,7 @@ namespace Nef2_Compatibility
             {
                 MessageBox.Show(operString.Groups[1] + " says: " + operString.Groups[4]);
                 Return = EatData.EatAll;
+                return;
             }
 
             /* Show OPER dialogue on not enough params for oper command */
@@ -100,6 +102,7 @@ namespace Nef2_Compatibility
                 loginWindow.Show();
                 loginWindow.VisibleChanged += new EventHandler(run_oper_command);
                 Return = EatData.EatAll;
+                return;
             }
 
             /* If nothing else, then eat no data and our plugin goes hungry */
